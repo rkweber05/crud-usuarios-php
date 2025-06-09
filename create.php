@@ -13,10 +13,11 @@
         sendSlackNotification("Novo usuário criado: $nome");
 
         echo "Usuário criado com sucesso !";
+        header ("Location dashboard.php");
     }
 ?>
 
-<form action="" method="POST">
+<form action="" method="post">
     Nome: <input type="text" name="nome" id=""> 
     <br>
     Email: <input type="email" name="email" id="">
