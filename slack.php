@@ -1,6 +1,6 @@
 <?php 
     function sendSlackNotification($message) {
-        $webhook_url = 'https://hooks.slack.com/services/WEEBHOOKAQUI'; // ver como que faz
+        $webhook_url = 'https://hooks.slack.com/services/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'; // ver como que faz
 
         $payload = json_encode(['text' => $message]);
 
