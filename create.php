@@ -10,10 +10,12 @@
         $stmt = $pdo -> prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
         $stmt -> execute([$nome, $email, $senha]);
 
-        sendSlackNotification("Novo usuário criado: $nome");
+        sendSlackNotification("Novo usuário criado: $nome ($email)");
 
         echo "Usuário criado com sucesso !";
-        header ("Location dashboard.php");
+        header ("Location: dashboard.php");
+
+        exit();
     }
 ?>
 
