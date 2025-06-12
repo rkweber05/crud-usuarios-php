@@ -7,19 +7,19 @@ Este projeto é um sistema **CRUD básico** desenvolvido em **PHP puro**, com **
 ---
 
 ## 🗂️ Estrutura de Pastas
-  CRUD/
-  │
-  ├── create.php # Criar novo usuário
-  ├── read.php # Listar usuários
-  ├── edit.php # Editar dados de um usuário
-  ├── delete.php # Deletar um usuário
-  ├── login.php # Login com autenticação
-  ├── logout.php # Encerrar sessão
-  ├── dashboard.php # Interface principal do sistema
-  ├── db.php # Conexão com o banco de dados
-  ├── slack.php # Integração com Slack via Webhook
-  └── README.md # Documentação do projeto
 
+CRUD/
+│
+├── create.php        # Criar novo usuário
+├── read.php          # Listar usuários
+├── edit.php          # Editar dados de um usuário
+├── delete.php        # Deletar um usuário
+├── login.php         # Login com autenticação
+├── logout.php        # Encerrar sessão
+├── dashboard.php     # Interface principal do sistema
+├── db.php            # Conexão com o banco de dados
+├── slack.php         # Integração com Slack via Webhook
+└── README.md         # Documentação do projeto
 
 ---
 
