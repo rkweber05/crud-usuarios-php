@@ -1,25 +1,40 @@
-<?php 
-    function sendSlackNotification($message) {
-        $webhook_url = 'https://hooks.slack.com/services/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'; 
-
-        $payload = json_encode(['text' => $message]);
-
-        $ch = curl_init($webhook_url);
-
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $response = curl_exec($ch);
-        $error = curl_error($ch);
-
-        if ($error) {
-            error_log("Erro ao enviar para o Slack" . $error);
-        }
-
-        curl_close($ch);
-
-        return $response;
-    }
+<?php
+function sendSlackNotification($message) {
+    $webhook_url = 'https://hooks.slack.com/services/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';
+    
+    $data = [
+        'text' => $message,
+        'channel' => '#notify-slack', // Força o canal específico
+        'username' => 'Sistema PHP',
+        'icon_emoji' => ':php:'
+    ];
+    
+    $payload = json_encode($data);
+    
+    $ch = curl_init($webhook_url);
+    
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $payload,
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($payload)
+        ],
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 10
+    ]);
+    
+    $response = curl_exec($ch);
+    $error = curl_error($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    
+    curl_close($ch);
+    
+    // Log para debug
+    error_log("Slack Response: ".$response);
+    error_log("Slack Error: ".$error);
+    error_log("HTTP Code: ".$http_code);
+    
+    return $response;
+}
 ?>
