@@ -8,6 +8,7 @@ Este projeto é um sistema **CRUD básico** desenvolvido em **PHP puro**, com **
 
 ## 🗂️ Estrutura de Pastas
 
+```
 CRUD/
 │
 ├── create.php        # Criar novo usuário
@@ -20,6 +21,7 @@ CRUD/
 ├── db.php            # Conexão com o banco de dados
 ├── slack.php         # Integração com Slack via Webhook
 └── README.md         # Documentação do projeto
+```
 
 ---
 
