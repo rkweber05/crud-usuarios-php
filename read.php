@@ -9,7 +9,7 @@
 
     $mensagem = "Usuários cadastrados:\n";
     foreach ($usuarios as $usuario) {
-        $mensagem .= "ID: {$usuario['id']} - Nome: {$usuario['nome']} - Email: {$usuario['email']} <br>";
+        $mensagem .= "ID: {$usuario['id']} - Nome: {$usuario['nome']} - Email: {$usuario['email']}";
     }
 
     sendSlackNotification($mensagem);
