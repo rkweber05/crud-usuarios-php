@@ -1,10 +1,10 @@
 <?php
 function sendSlackNotification($message) {
-    $webhook_url = 'https://hooks.slack.com/services/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';
+    $webhook_url = 'https://hooks.slack.com/services/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';
     
     $data = [
         'text' => $message,
-        'channel' => '#notify-slack', // Força o canal específico
+        'channel' => '#notify-slack', 
         'username' => 'Sistema PHP',
         'icon_emoji' => ':php:'
     ];
