@@ -2,19 +2,17 @@
     namespace App\Core;
 
     class Router {
-        public function run() {
+        public function run () {
             $url = $_GET['url'] ?? 'login';
-
             $url = rtrim($url, '/');
+
             $segments = explode('/', $url);
 
-            $controllerName = ucfirst($segments[0]) . 'Controller';
+            $controllerName = ucfirst($segments[0]) .  'Controller';
             $method = $segments[1] ?? 'index';
 
-            $controllerClass = "App\\Controllers\\$controllerName";
-
-            if (class_exists($controllerClass)) {
-                $controller = new $controllerClass();
+            if (class_exists($controllerName)) {
+                $controller = new $controllerName();
 
                 if (method_exists($controller, $method)) {
                     $controller->$method();
